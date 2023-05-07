@@ -1,0 +1,19 @@
+{
+  "name": "jelly_belly",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElizabethMedvedeva/Jelly_Belly.git"
+  },
+  "author": "Jelly Belly Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElizabethMedvedeva/Jelly_Belly/issues"
+  },
+  "homepage": "https://github.com/ElizabethMedvedeva/Jelly_Belly#readme"
+}
