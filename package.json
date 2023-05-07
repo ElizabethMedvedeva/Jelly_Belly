@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ElizabethMedvedeva/Jelly_Belly/issues"
   },
-  "homepage": "https://github.com/ElizabethMedvedeva/Jelly_Belly#readme"
+  "homepage": "https://github.com/ElizabethMedvedeva/Jelly_Belly#readme",
+  "dependencies": {
+    "parcel": "^2.8.3"
+  }
 }
