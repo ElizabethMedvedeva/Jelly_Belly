@@ -1,0 +1,1 @@
+const root = document.getElementsByClassName("root")[0];
