@@ -1,4 +1,6 @@
+import { findProduct } from "../../core/api.js";
 import { createElement } from "../../helpers/index.js";
+import { SearchResult } from "./search-result.js";
 
 export const MainSearch = () => {
   const root = createElement({
@@ -11,7 +13,11 @@ export const MainSearch = () => {
         childrens: [
           {
             name: "input",
-            attributes: { placeholder: "Search...", type: "text" },
+            attributes: {
+              placeholder: "Search...",
+              type: "text",
+              name: "search",
+            },
           },
           {
             name: "button",
@@ -22,25 +28,25 @@ export const MainSearch = () => {
       {
         name: "ol",
         classList: ["main-search__result-list"],
-        childrens: [
-          {
-            name: "li",
-            classList: ["main-search__result-product"],
-            childrens: [
-              { name: "img", attributes: { src: "", alt: "product" } },
-              { name: "h4", text: "Product Name" },
-              { name: "h5", text: "100$" },
-            ],
-          },
-        ],
+        childrens: [],
       },
     ],
   });
   const form = root.children[0];
   const list = root.children[1];
+  let delay;
 
   form.addEventListener("input", (event) => {
-    console.log(1);
+    clearTimeout(delay);
+    delay = setTimeout(() => {
+      findProduct(form.search.value).then((data) => {
+        list.innerHTML = "";
+
+        data.forEach((product) => {
+          list.appendChild(SearchResult(product));
+        });
+      });
+    }, 300);
 
     list.innerHTML = "";
   });
