@@ -1,0 +1,45 @@
+@import "../../styles/variables.less";
+@import "../../styles/fonts/iconomoon/variables.less";
+
+.main-search__search-form {
+  position: relative;
+  input {
+    padding-left: 25px;
+    width: 100%;
+    background-color: @blush-element-color;
+    border: 0px;
+    outline: none;
+    &::placeholder {
+      color: @black-text-colot;
+      font-weight: 500;
+      font-family: @Lobster;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover {
+      -webkit-text-fill-color: black;
+      transition: background-color 5000s ease-in-out 0s;
+      font-family: @Lobster;
+    }
+  }
+  button {
+    background: transparent;
+    border: none;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.main-search {
+  ol {
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 1px 1px 10px #0005;
+    border-radius: 0 0 5px 5px;
+  }
+}

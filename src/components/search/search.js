@@ -1,6 +1,9 @@
+import "./search.less";
+
 import { findProduct } from "../../core/api.js";
 import { createElement } from "../../helpers/index.js";
 import { SearchResult } from "./search-result.js";
+import { EmptySearchResult } from "./empty-search-result.js";
 
 export const MainSearch = () => {
   const root = createElement({
@@ -21,7 +24,7 @@ export const MainSearch = () => {
           },
           {
             name: "button",
-            text: "Search",
+            childrens: [{ name: "span", classList: ["icon-search"] }],
           },
         ],
       },
@@ -38,17 +41,20 @@ export const MainSearch = () => {
 
   form.addEventListener("input", (event) => {
     clearTimeout(delay);
+
     delay = setTimeout(() => {
-      findProduct(form.search.value).then((data) => {
+      findProduct(form.search.value.trim()).then((data) => {
         list.innerHTML = "";
 
         data.forEach((product) => {
           list.appendChild(SearchResult(product));
         });
+
+        if (data.length === 0) {
+          list.appendChild(EmptySearchResult());
+        }
       });
     }, 300);
-
-    list.innerHTML = "";
   });
 
   return root;
