@@ -1,8 +1,4 @@
-import {
-  createBestSellers,
-  createCard,
-  getCards,
-} from "../components/cards/cards.js";
+import { createBestSellers, getCards } from "../components/cards/cards.js";
 async function init() {
   const root = document.getElementById("root");
   let cards = await getCards();

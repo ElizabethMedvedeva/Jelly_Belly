@@ -1,5 +1,6 @@
+import { apiRequest } from "../../core/api";
 
-export function createCard(root, element) {
+function createCard(root, element) {
   const card = document.createElement("div");
   card.classList.add("card");
 
@@ -13,18 +14,18 @@ export function createCard(root, element) {
   `;
   root.appendChild(card);
 }
-export function createBestSellers(root, cards) {
+function createBestSellers(root, cards) {
   const bestSellers = document.createElement("div");
   bestSellers.classList.add("best-sellers");
-
   for (i = 0; i < cards.length; i++) {
     createCard(bestSellers, cards[i]);
   }
   root.appendChild(bestSellers);
 }
-export async function getCards() {
+async function getCards() {
   const cardsURL = "https://64564c932e41ccf169191429.mockapi.io/api/v1/cardss";
-  let response = await fetch(cardsURL);
-  const result = await response.json();
+  let result = apiRequest(cardsURL);
   return result;
 }
+
+export { createBestSellers, getCards };
