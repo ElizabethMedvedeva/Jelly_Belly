@@ -39,7 +39,7 @@ export const MainSearch = () => {
   const list = root.children[1];
   let delay;
 
-  form.addEventListener("input", (event) => {
+  form.addEventListener("input", () => {
     clearTimeout(delay);
 
     delay = setTimeout(() => {
