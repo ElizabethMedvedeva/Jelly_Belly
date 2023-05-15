@@ -1,25 +1,26 @@
 export * from "../../../core/index.js";
-createBanner();
-const swiper = new Swiper(".swiper", {
-  direction: "horizontal",
-  loop: true,
-  speed: 500,
-  slidesPerView: 3,
-  slidesPerGroup: 1,
-  spaceBetween: 20,
+function createSwiper() {
+  new Swiper(".swiper", {
+    direction: "horizontal",
+    loop: true,
+    speed: 500,
+    slidesPerView: 3,
+    slidesPerGroup: 1,
+    spaceBetween: 20,
 
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
 
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+}
 
-function createBanner() {
+function createBanner(root) {
   const banner = document.createElement("div");
   banner.classList.add("swiper");
 
@@ -43,6 +44,7 @@ function createBanner() {
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
       `;
-
   root.appendChild(banner);
+  createSwiper();
 }
+export { createBanner };
