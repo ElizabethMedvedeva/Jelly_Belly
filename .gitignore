@@ -3,3 +3,4 @@ dist
 .parcel-cache
 index.css
 .DS_Store
+*.css
