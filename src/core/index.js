@@ -1,9 +1,10 @@
-import { createBestSellers, getCards } from "../components/cards/cards.js";
+import { createBestSellers, getCards, createModal } from "../components/cards/cards.js";
 async function init() {
   const root = document.getElementById("root");
   let cards = await getCards();
   cards = shuffle(cards);
   cards = cards.slice(0, 6);
+  createModal(root);
   createBestSellers(root, cards);
 }
 init();
