@@ -4,13 +4,22 @@ function createSwiper() {
     direction: "horizontal",
     loop: true,
     speed: 500,
-    slidesPerView: 3,
+    slidesPerView: 1,
     slidesPerGroup: 1,
     spaceBetween: 20,
+    effect: "slide",
+    mousewheelControl: 1,
+    speed: 1000,
+    grabCursor: true,
+
+    direction: "horizontal",
+    loop: true,
+    pagination: ".swiper-pagination",
 
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
+      dynamicBullets: true,
     },
 
     navigation: {
@@ -28,17 +37,20 @@ function createBanner(root) {
   
       <div class="swiper-wrapper">
       <div class="swiper-slide">
-      <img src="./src/components/banner/banner-images/1.jpg" alt="">
+      <img src="https://cdn.discordapp.com/attachments/1033793841813262489/1107762191593128006/2.png" alt="">
       </div>
       <div class="swiper-slide">
-        <img src="https://cdn.discordapp.com/attachments/862076168199340052/1106532465914413116/image.png" alt="" />
+        <img src="https://cdn.discordapp.com/attachments/1033793841813262489/1107762192486510682/3.png" alt="" />
       </div>
       <div class="swiper-slide">
-        <img src="./banner-images/3.jpg" alt="" />
+        <img src="https://cdn.discordapp.com/attachments/1033793841813262489/1107762191593128006/2.png" alt="" />
       </div>
       <div class="swiper-slide">
-        <img src="./banner-images/4.jpg" alt="" />
+        <img src="https://cdn.discordapp.com/attachments/1033793841813262489/1107762192922714232/1.png" alt="" />
       </div>
+      <div class="swiper-slide">
+      <img src="https://cdn.discordapp.com/attachments/1033793841813262489/1107762192486510682/3.png" alt="" />
+    </div>
     </div>
     <div class="swiper-pagination"></div>
       <div class="swiper-button-prev"></div>
