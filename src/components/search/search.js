@@ -8,7 +8,7 @@ import { EmptySearchResult } from "./empty-search-result.js";
 export const MainSearch = () => {
   const root = createElement({
     name: "div",
-    classList: ["main-search"],
+    classList: ["main-search", "main-search_refined"],
     childrens: [
       {
         name: "form",
@@ -24,7 +24,24 @@ export const MainSearch = () => {
           },
           {
             name: "button",
-            childrens: [{ name: "span", classList: ["icon-search"] }],
+            classList: ["main-search__action", "main-search__action_search"],
+            childrens: [
+              {
+                name: "span",
+                classList: ["icon-search"],
+              },
+            ],
+          },
+          {
+            name: "button",
+            classList: ["main-search__action", "main-search__action_refined"],
+            attributes: { "data-action": "refined-search" },
+            childrens: [
+              {
+                name: "span",
+                classList: ["refined-search"],
+              },
+            ],
           },
         ],
       },
@@ -38,6 +55,22 @@ export const MainSearch = () => {
   const form = root.children[0];
   const list = root.children[1];
   let delay;
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+  });
+
+  form.addEventListener("click", (event) => {
+    if (event.target.getAttribute("data-action") === "refined-search") {
+      root.classList.add("main-search_refined");
+    }
+  });
+
+  form.querySelector("input").addEventListener("focus", () => {
+    if (list.querySelector(".main-search__result-product")) {
+      root.classList.remove("main-search_refined");
+    }
+  });
 
   form.addEventListener("input", () => {
     clearTimeout(delay);
@@ -53,6 +86,8 @@ export const MainSearch = () => {
         if (data.length === 0) {
           list.appendChild(EmptySearchResult());
         }
+
+        root.classList.remove("main-search_refined");
       });
     }, 300);
   });

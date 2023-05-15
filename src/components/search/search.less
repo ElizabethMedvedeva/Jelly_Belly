@@ -22,16 +22,32 @@
       font-family: @Lobster;
     }
   }
-  button {
+  .main-search__action {
+    cursor: pointer;
     background: transparent;
     border: none;
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    left: 0;
     top: 0;
     bottom: 0;
+    &_search {
+      left: 0;
+    }
+    &_refined {
+      right: 0;
+      span {
+        pointer-events: none;
+      }
+      span:before {
+        content: "+";
+        display: block;
+        color: @black-element-color;
+        transform: rotate(45deg);
+        font-size: 16px;
+      }
+    }
   }
 }
 
@@ -41,5 +57,12 @@
     padding: 10px;
     box-shadow: 1px 1px 10px #0005;
     border-radius: 0 0 5px 5px;
+  }
+
+  &.main-search_refined {
+    .main-search__action_refined,
+    .main-search__result-list {
+      display: none;
+    }
   }
 }
