@@ -3,12 +3,13 @@ import { apiRequest } from "../../core/api";
 function createCard(root, element) {
   const card = document.createElement("div");
   card.classList.add("card");
+  card.setAttribute("id", element.id);
 
   card.innerHTML = `
   <div class="card_image"><img src="${element.img}" /></div>
   <div class="card_info">
-  <div class="card_info_name">${element.name}</div>
-  <div class="card_info_price">Price ${element.price}$</div>
+    <div class="card_info_name">${element.name}</div>
+    <div class="card_info_price">Price ${element.price}$</div>
   </div>
   <div class="card_button"><button class="card_button_btn" type="button">Add to cart</button></div>
   `;
@@ -22,20 +23,36 @@ function createModal(root) {
 
   imageModal.innerHTML = `
   <span class="modal_close">&times;</span>
-  <img class="modal_content">
-  <div id="caption"></div>
+  <div class="modal_content">
+    <img class="modal_img">
+    <div id="caption"></div>
+  </div>
   `;
+  const span = imageModal.querySelector(".modal_close");
+  span.onclick = closeModal;
+
   root.appendChild(imageModal);
 }
 
+
+
 function openModal() {
-  const modalImage = document.getElementsByClassName("modal_content")[0];
+  const modalImage = document.getElementsByClassName("modal_img")[0];
   const captionText = document.getElementById("caption");
   const modal = document.getElementById("myModal");
   modal.style.display = "block";
   modalImage.src = this.src;
-  captionText.innerHTML = this.alt;
+  captionText.innerHTML = "Name of Jelly Belly";
 }
+
+
+
+function closeModal() {
+  const modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+
+
 
 function createBestSellers(root, cards) {
   const bestSellers = document.createElement("div");
@@ -55,6 +72,9 @@ function createBestSellers(root, cards) {
   bestSellers.appendChild(bestSellersCards);
   root.appendChild(bestSellers);
 }
+
+
+
 
 async function getCards() {
   const cardsURL = "https://64564c932e41ccf169191429.mockapi.io/api/v1/cardss";
