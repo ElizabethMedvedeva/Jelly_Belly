@@ -1,18 +1,14 @@
-export const findProduct = (search) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      const data = [
-        { id: 1, name: "Product 1", price: 100 },
-        { id: 2, name: "Product 2", price: 200 },
-        { id: 3, name: "Product 3", price: 1300 },
-        { id: 4, name: "GRA 4", price: 144400 },
-      ].filter((element) => {
-        return element.name.toLowerCase().includes(search.toLowerCase());
-      });
+import { API_URL } from "./constants";
 
-      resolve(data);
-    }, 1000);
-  });
+export const findProduct = async (search) => {
+  const url = new URL(`${API_URL}/cardss`);
+  url.searchParams.append("search", search);
+  url.searchParams.append("page", 1);
+  url.searchParams.append("limit", 6);
+
+  const result = await apiRequest(url);
+
+  return result;
 };
 
 async function apiRequest(URL) {

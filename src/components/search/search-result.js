@@ -10,7 +10,7 @@ export const SearchResult = (product) => {
       {
         name: "img",
         attributes: {
-          src: "https://wonder-day.com/wp-content/uploads/2020/04/wonder-day-images-rainbow-1.jpg",
+          src: product.img,
           alt: "product",
         },
       },
