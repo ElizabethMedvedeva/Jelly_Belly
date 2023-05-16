@@ -1,64 +1,74 @@
 .swiper {
   display: flex;
-  flex-grow: 1;
-  max-width: 750px;
-  width: 100%;
-  height: auto;
+  height: 760px;
   margin: 0 auto;
   border: 2px solid red;
   box-sizing: content-box;
-}
 
-.swiper-slide {
-  display: flex;
-}
+  &-slide {
+    display: flex;
 
-.swiper-slide img {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-button-prev {
-  background-color: #bb8b5f30;
-  left: 20px;
-}
-
-.swiper-button-next {
-  background-color: #bb8b5f30;
-  right: 20px;
-}
-
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  background-color: #e78282;
-  color: #111;
-  font-size: 30px;
-}
-
-.swiper-pagination-bullet {
-  background-color: transparent;
-  width: 15px;
-  height: 15px;
-  opacity: 1;
-  border-radius: 10px;
-  border: 2px solid #e78282;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: #e78282;
+    img {
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &-button {
+    &-prev {
+      background-color: #bb8b5f30;
+      left: 20px;
+      &:after {
+        color: #111;
+        font-size: 90px;
+        @media screen and (max-width: 600px) {
+          font-size: 50px;
+        }
+      }
+    }
+    &-next {
+      &:after {
+        color: #111;
+        font-size: 90px;
+        @media screen and (max-width: 600px) {
+          font-size: 50px;
+        }
+      }
+      background-color: #bb8b5f30;
+      right: 20px;
+    }
+  }
+  &-pagination {
+    &-bullet {
+      background-color: transparent;
+      width: 15px;
+      height: 15px;
+      opacity: 1;
+      border-radius: 10px;
+      border: 2px solid #e78282;
+      &-active {
+        background-color: #e78282;
+      }
+    }
+  }
 }
 
 @media (max-width: 1250px) {
   .swiper {
-    max-width: 780px;
+    height: 500px;
   }
 }
 
 @media (max-width: 950px) {
   .swiper {
-    max-width: 320px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 650px) {
+  .swiper {
+    height: 250px;
   }
 }

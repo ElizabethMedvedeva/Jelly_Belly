@@ -1,0 +1,37 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    overflow: auto;
+    height: 100%;
+    background-color: @modal-backgroup-element-color;
+    &_content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    &_img {
+      padding-top: 5%;
+      display: block;
+      max-height: 700px;
+    }
+    #caption {
+      display: block;
+      text-align: center;
+      color: @black-text-color;
+    }
+    &_close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: @black-element-color;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+  }

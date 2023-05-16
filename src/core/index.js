@@ -1,10 +1,6 @@
 import { createBanner } from "../components/banner/js/banner.js";
-import {
-  createBestSellers,
-  getCards,
-  createModal,
-} from "../components/cards/cards.js";
-
+import { createBestSellers } from "../components/ui/best_sellers/best_sellers.js";
+import { getCards } from "../components/cards/cards.js";
 import { MainSearch } from "../components/search/search.js";
 
 async function init() {
@@ -16,7 +12,6 @@ async function init() {
   let cards = await getCards();
   cards = shuffle(cards);
   cards = cards.slice(0, 6);
-  createModal(root);
   createBestSellers(root, cards);
 }
 
