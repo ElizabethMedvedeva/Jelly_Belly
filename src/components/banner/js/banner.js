@@ -43,13 +43,13 @@ function createBanner(root) {
         <img src="https://cdn.discordapp.com/attachments/1033793841813262489/1107762192486510682/3.png" alt="" />
       </div>
       <div class="swiper-slide">
-        <img src="https://cdn.discordapp.com/attachments/1033793841813262489/1107762191593128006/2.png" alt="" />
+        <img src="https://cdn.discordapp.com/attachments/1033793841813262489/1108010024241995868/8.png" alt="" />
       </div>
       <div class="swiper-slide">
         <img src="https://cdn.discordapp.com/attachments/1033793841813262489/1107762192922714232/1.png" alt="" />
       </div>
       <div class="swiper-slide">
-      <img src="https://cdn.discordapp.com/attachments/1033793841813262489/1107762192486510682/3.png" alt="" />
+      <img src="https://cdn.discordapp.com/attachments/1033793841813262489/1108010023830962237/6.png" alt="" />
     </div>
     </div>
     <div class="swiper-pagination"></div>
