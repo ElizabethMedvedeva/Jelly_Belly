@@ -2,7 +2,6 @@
   display: flex;
   height: 760px;
   margin: 0 auto;
-  border: 2px solid red;
   box-sizing: content-box;
 
   &-slide {
@@ -23,8 +22,11 @@
       &:after {
         color: #111;
         font-size: 90px;
-        @media screen and (max-width: 600px) {
-          font-size: 50px;
+        @media screen and (max-width: 900px) {
+          font-size: 40px;
+        }
+        @media screen and (max-width: 900px) {
+          font-size: 25px;
         }
       }
     }
@@ -32,8 +34,11 @@
       &:after {
         color: #111;
         font-size: 90px;
-        @media screen and (max-width: 600px) {
-          font-size: 50px;
+        @media screen and (max-width: 900px) {
+          font-size: 40px;
+        }
+        @media screen and (max-width: 400px) {
+          font-size: 25px;
         }
       }
       background-color: #bb8b5f30;
@@ -55,20 +60,27 @@
   }
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1550px) {
   .swiper {
     height: 500px;
   }
 }
 
-@media (max-width: 950px) {
+@media (max-width: 990px) {
   .swiper {
-    height: 400px;
+    height: 350px;
   }
 }
 
 @media (max-width: 650px) {
   .swiper {
     height: 250px;
+  }
+}
+
+@media (max-width: 400px) {
+  .swiper {
+    height: 200px;
+    max-width: 300px;
   }
 }
