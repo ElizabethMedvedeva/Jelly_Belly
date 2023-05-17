@@ -1,12 +1,12 @@
 import { createBanner } from "../components/banner/js/banner.js";
 import { createBestSellers } from "../components/ui/best_sellers/best_sellers.js";
 import { getCards } from "../components/cards/cards.js";
-import { MainSearch } from "../components/search/search.js";
+import { Header } from "../components/ui/header/header.js";
 
 async function init() {
   const root = document.getElementById("root");
 
-  root.appendChild(MainSearch());
+  root.appendChild(Header());
 
   createBanner(root);
   let cards = await getCards();
