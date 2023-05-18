@@ -1,4 +1,7 @@
-import { createBanner } from "../components/banner/js/banner.js";
+import {
+  createBanner,
+  getSwiperImages,
+} from "../components/banner/js/banner.js";
 import { createBestSellers } from "../components/ui/best_sellers/best_sellers.js";
 import { getCards } from "../components/cards/cards.js";
 import { Header } from "../components/ui/header/header.js";
@@ -8,7 +11,8 @@ async function init() {
 
   root.appendChild(Header());
 
-  createBanner(root);
+  const swipers = await getSwiperImages();
+  createBanner(root, swipers);
   let cards = await getCards();
   cards = shuffle(cards);
   cards = cards.slice(0, 6);

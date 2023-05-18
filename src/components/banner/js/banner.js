@@ -1,4 +1,6 @@
 export * from "../../../core/index.js";
+import { apiRequest } from "../../../core/api.js";
+
 function createSwiper() {
   new Swiper(".swiper", {
     direction: "horizontal",
@@ -29,34 +31,36 @@ function createSwiper() {
   });
 }
 
-function createBanner(root) {
+function createBanner(root, swipers) {
   const banner = document.createElement("div");
   banner.classList.add("swiper");
-
-  banner.innerHTML = `
-  
-      <div class="swiper-wrapper">
-      <div class="swiper-slide">
-      <img src="https://cdn.discordapp.com/attachments/1033793841813262489/1107762191593128006/2.png" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="https://cdn.discordapp.com/attachments/1033793841813262489/1107762192486510682/3.png" alt="" />
-      </div>
-      <div class="swiper-slide">
-        <img src="https://cdn.discordapp.com/attachments/1033793841813262489/1108010024241995868/8.png" alt="" />
-      </div>
-      <div class="swiper-slide">
-        <img src="https://cdn.discordapp.com/attachments/1033793841813262489/1107762192922714232/1.png" alt="" />
-      </div>
-      <div class="swiper-slide">
-      <img src="https://cdn.discordapp.com/attachments/1033793841813262489/1108010023830962237/6.png" alt="" />
-    </div>
-    </div>
-    <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-      `;
+  const swiperWrapper = document.createElement("div");
+  swiperWrapper.classList.add("swiper-wrapper");
+  for (swiper of swipers) {
+    const swiperSlide = document.createElement("div");
+    swiperSlide.classList.add("swiper-slide");
+    const swiperImg = document.createElement("img");
+    swiperImg.src = swiper.img;
+    swiperSlide.appendChild(swiperImg);
+    swiperWrapper.appendChild(swiperSlide);
+    banner.appendChild(swiperWrapper);
+  }
+  const swiperPagination = document.createElement("div");
+  swiperPagination.classList.add("swiper-pagination");
+  const swiperPrev = document.createElement("div");
+  swiperPrev.classList.add("swiper-button-prev");
+  const swiperNext = document.createElement("div");
+  swiperNext.classList.add("swiper-button-next");
+  banner.appendChild(swiperPagination);
+  banner.appendChild(swiperPrev);
+  banner.appendChild(swiperNext);
   root.appendChild(banner);
   createSwiper();
 }
-export { createBanner };
+async function getSwiperImages() {
+  const swiperURL = "https://6464d009043c103502c3acb4.mockapi.io/api/v1/swiper";
+  let result = apiRequest(swiperURL);
+  return result;
+}
+
+export { createBanner, getSwiperImages };
