@@ -54,30 +54,6 @@ function createBanner(root, swipers) {
   banner.appendChild(swiperPagination);
   banner.appendChild(swiperPrev);
   banner.appendChild(swiperNext);
-
-  // banner.innerHTML = `
-
-  //     <div class="swiper-wrapper">
-  //       <div class="swiper-slide">
-  //       <img src="${element.img}" alt="">
-  //       </div>
-  //       <div class="swiper-slide">
-  //         <img src="${element.img}" alt="" />
-  //       </div>
-  //       <div class="swiper-slide">
-  //         <img src="${element.img}" alt="" />
-  //       </div>
-  //       <div class="swiper-slide">
-  //         <img src="${element.img}" alt="" />
-  //       </div>
-  //       <div class="swiper-slide">
-  //       <img src="${element.img}" alt="" />
-  //       </div>
-  //    </div>
-  //   <div class="swiper-pagination"></div>
-  //     <div class="swiper-button-prev"></div>
-  //     <div class="swiper-button-next"></div>
-  //     `;
   root.appendChild(banner);
   createSwiper();
 }
