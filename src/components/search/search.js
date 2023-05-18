@@ -20,6 +20,7 @@ export const MainSearch = () => {
               placeholder: "Search...",
               type: "text",
               name: "search",
+              autocomplete: "off",
             },
           },
           {
@@ -39,7 +40,7 @@ export const MainSearch = () => {
             childrens: [
               {
                 name: "span",
-                classList: ["refined-search"],
+                classList: ["icon-cross"],
               },
             ],
           },
