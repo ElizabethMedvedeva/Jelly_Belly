@@ -1,4 +1,5 @@
 @import "../../../styles/variables.less";
+@import "../../../styles/mixins.less";
 
 .footer {
   padding: 10px;
@@ -7,6 +8,118 @@
     .container();
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 750px) {
+  .footer__information {
+    .footer__logo {
+      max-width: 62px;
+      max-height: 49px;
+    }
+    .footer__text {
+      width: 170px;
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+  .footer__social-media {
+    .footer__social-media-title {
+      margin-bottom: 17px;
+      h3 {
+        font-size: 20px;
+      }
+    }
+    .footer__social-media-links {
+      a {
+        font-size: 30px;
+      }
+    }
+  }
+  .footer__location {
+    h3 {
+      font-size: 20px;
+    }
+    a {
+      font-size: 30px;
+    }
+    h4 {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .footer {
+    padding: 5px;
+    .footer__container {
+      padding: 5px;
+    }
+    .footer__information {
+      .footer__logo {
+        max-width: 45px;
+        max-height: 45px;
+      }
+      .footer__text {
+        width: 115px;
+        p {
+          font-size: 10px;
+        }
+      }
+    }
+    .footer__social-media {
+      margin: 0 7px;
+      .footer__social-media-title {
+        h3 {
+          font-size: 15px;
+        }
+      }
+      .footer__social-media-links {
+        a {
+          margin: 5px;
+          font-size: 25px;
+        }
+      }
+    }
+    .footer__location {
+      h3 {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 415px) {
+  .footer {
+    .footer__container {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer__information {
+      margin-bottom: 15px;
+      .footer__logo {
+        max-width: 80px;
+        max-height: 80px;
+      }
+      .footer__text {
+        width: 240px;
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+    .footer__social-media {
+      margin-bottom: 7px;
+      .footer__social-media-title {
+        display: none;
+      }
+      .footer__social-media-links {
+        a {
+          margin: 15px;
+        }
+      }
+    }
   }
 }

@@ -12,7 +12,7 @@ export const FooterLocation = () => {
       },
       {
         name: "a",
-        attributes: { href: "https://google.com" },
+        attributes: { href: "https://www.google.by/maps/" },
         childrens: [
           {
             name: "span",
