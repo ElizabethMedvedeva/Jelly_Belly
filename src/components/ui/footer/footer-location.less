@@ -1,0 +1,30 @@
+@import "../../../styles/variables.less";
+
+.footer__location {
+  flex-flow: column wrap;
+  display: flex;
+  align-items: center;
+  h3 {
+    font-family: @Comme;
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  a {
+    font-size: 40px;
+    color: @black-element-color;
+    text-decoration: none;
+    &:hover {
+      color: rgb(220, 11, 11);
+      transition: 0.3s;
+    }
+  }
+
+  h4 {
+    font-family: @Comme;
+    font-weight: 100;
+    text-align: center;
+    font-size: 15px;
+  }
+}

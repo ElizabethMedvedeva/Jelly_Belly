@@ -1,46 +1,24 @@
 import { createElement } from "../../../helpers";
+import { FooterInformation } from "./footer-information";
+import { FooterLocation } from "./footer-location";
+import { FooterSocialMedia } from "./footer-social-media";
 
 export const Footer = () => {
   const footer = createElement({
     name: "footer",
     classList: ["footer"],
-    childrens: [
-      {
-        name: "div",
-        classList: ["footer__container"],
-        childrens: [
-          {
-            name: "div",
-            classList: ["footer__information"],
-            childrens: [
-              {
-                name: "div",
-                classList: ["footer__logo"],
-                childrens: [
-                  {
-                    name: "img",
-                    attributes: {
-                      src: "https://i.imgur.com/wVTYpcd.png",
-                      alt: "logo",
-                    },
-                  },
-                ],
-              },
-              {
-                name: "div",
-                classList: ["footer__text"],
-                childrens: [
-                  {
-                    name: "p",
-                    text: "Jelly Belly Candy Company is dedicated to selling the highest quality confections, delivering superior customer service. ",
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    ],
   });
+
+  const container = createElement({
+    name: "div",
+    classList: ["footer__container"],
+  });
+
+  container.appendChild(FooterInformation());
+  container.appendChild(FooterSocialMedia());
+  container.appendChild(FooterLocation());
+
+  footer.appendChild(container);
+
   return footer;
 };
