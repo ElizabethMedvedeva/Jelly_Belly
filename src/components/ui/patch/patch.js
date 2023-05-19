@@ -14,13 +14,16 @@ function createPatch(root, patches) {
   }
   const patchTextContainer = document.createElement("div");
   patchTextContainer.classList.add("patch_img");
-  const patchText = document.createElement("h2");
-  patchText.innerText = `hi vasya`;
+  const patchText = document.createElement("p");
+  patchText.id = "patch_text";
+  patchText.innerHTML = "The happy world<br>of<br>CANDIES";
   patchTextContainer.appendChild(patchText);
   patchContainer.appendChild(patchTextContainer);
 
   root.appendChild(patchContainer);
 }
+
+
 
 async function getPatchesImg() {
   const patchURL = "https://64564c932e41ccf169191429.mockapi.io/api/v1/patches";
