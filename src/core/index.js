@@ -5,6 +5,7 @@ import {
 import { createBestSellers } from "../components/ui/best_sellers/best_sellers.js";
 import { getCards } from "../components/cards/cards.js";
 import { Header } from "../components/ui/header/header.js";
+import { Footer } from "../components/ui/footer/footer.js";
 
 async function init() {
   const root = document.getElementById("root");
@@ -17,6 +18,8 @@ async function init() {
   cards = shuffle(cards);
   cards = cards.slice(0, 6);
   createBestSellers(root, cards);
+
+  root.appendChild(Footer());
 }
 
 init();

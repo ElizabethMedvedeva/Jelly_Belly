@@ -1,9 +1,16 @@
+@import "../../../styles/variables.less";
+
 .header {
-  padding: 15px;
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
   background-color: @blush-element-color;
+
+  &__container {
+    .container();
+    padding-top: 15px;
+    padding-bottom: 15px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
 
   .logo {
     max-width: 80px;
