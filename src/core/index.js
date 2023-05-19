@@ -1,26 +1,25 @@
-import { createBanner } from "../components/banner/js/banner.js";
+import {
+  createBanner,
+  getSwiperImages,
+} from "../components/banner/js/banner.js";
 import { createBestSellers } from "../components/ui/best_sellers/best_sellers.js";
 import { getCards } from "../components/cards/cards.js";
-import { MainSearch } from "../components/search/search.js";
-import {
-  createPatch,
-  getPatchesImg,
-  
-} from "../components/ui/patch/patch.js";
+import { createPatch, getPatchesImg } from "../components/ui/patch/patch.js";
+import { Header } from "../components/ui/header/header.js";
 
 async function init() {
   const root = document.getElementById("root");
 
-  root.appendChild(MainSearch());
+  root.appendChild(Header());
 
-  createBanner(root);
+  const swipers = await getSwiperImages();
+  createBanner(root, swipers);
   let cards = await getCards();
   cards = shuffle(cards);
   cards = cards.slice(0, 6);
   createBestSellers(root, cards);
   const patches = await getPatchesImg();
   createPatch(root, patches);
-
 }
 
 init();

@@ -10,7 +10,7 @@
   border-bottom: 1px solid @border-element-color;
 
   &:hover {
-    background-color: rgb(235, 234, 234);
+    background-color: @alto-element-color;
     transition: cubic-bezier(0.23, 1, 0.32, 1);
   }
 
@@ -55,6 +55,29 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .main-search__result-product {
+    flex-direction: column;
+    h4 {
+      margin-left: 0px;
+    }
+    h5 {
+      margin-left: 0px;
+    }
+    .result-product {
+      &__info {
+        flex-direction: column;
+        align-items: center;
+      }
+      &__actions {
+        button {
+          padding: 10px 40px;
+        }
+      }
     }
   }
 }

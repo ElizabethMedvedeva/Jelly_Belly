@@ -1,25 +1,20 @@
-@import "./variables.less";
+@import "variables";
 
 @font-face {
-  font-family: "@{icomoon-font-family}";
-  src: url("@{icomoon-font-path}/@{icomoon-font-family}.eot?to6rdq");
-  src: url("@{icomoon-font-path}/@{icomoon-font-family}.eot?to6rdq#iefix")
-      format("embedded-opentype"),
-    url("@{icomoon-font-path}/@{icomoon-font-family}.ttf?to6rdq")
-      format("truetype"),
-    url("@{icomoon-font-path}/@{icomoon-font-family}.woff?to6rdq")
-      format("woff"),
-    url("@{icomoon-font-path}/@{icomoon-font-family}.svg?to6rdq#@{icomoon-font-family}")
-      format("svg");
+  font-family: '@{icomoon-font-family}';
+  src:  url('@{icomoon-font-path}/@{icomoon-font-family}.eot?nehuwl');
+  src:  url('@{icomoon-font-path}/@{icomoon-font-family}.eot?nehuwl#iefix') format('embedded-opentype'),
+    url('@{icomoon-font-path}/@{icomoon-font-family}.ttf?nehuwl') format('truetype'),
+    url('@{icomoon-font-path}/@{icomoon-font-family}.woff?nehuwl') format('woff'),
+    url('@{icomoon-font-path}/@{icomoon-font-family}.svg?nehuwl#@{icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "@{icomoon-font-family}" !important;
+  font-family: '@{icomoon-font-family}' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -34,11 +29,37 @@
 
 .icon-search {
   &:before {
-    content: @icon-search;
+    content: @icon-search; 
   }
 }
 .icon-cart {
   &:before {
-    content: @icon-cart;
+    content: @icon-cart; 
   }
 }
+.icon-location {
+  &:before {
+    content: @icon-location; 
+  }
+}
+.icon-cross {
+  &:before {
+    content: @icon-cross; 
+  }
+}
+.icon-instagram {
+  &:before {
+    content: @icon-instagram; 
+  }
+}
+.icon-telegram {
+  &:before {
+    content: @icon-telegram; 
+  }
+}
+.icon-twitter {
+  &:before {
+    content: @icon-twitter; 
+  }
+}
+
