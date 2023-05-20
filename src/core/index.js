@@ -6,6 +6,7 @@ import { createBestSellers } from "../components/ui/best_sellers/best_sellers.js
 import { getCards } from "../components/cards/cards.js";
 import { createPatch, getPatchesImg } from "../components/ui/patch/patch.js";
 import { Header } from "../components/ui/header/header.js";
+import { Footer } from "../components/ui/footer/footer.js";
 
 async function init() {
   const root = document.getElementById("root");
@@ -20,6 +21,7 @@ async function init() {
   createBestSellers(root, cards);
   const patches = await getPatchesImg();
   createPatch(root, patches);
+  root.appendChild(Footer());
 }
 
 init();

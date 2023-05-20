@@ -7,7 +7,12 @@ export const Header = () => {
     classList: ["header"],
   });
 
-  header.appendChild(
+  const container = createElement({
+    name: "div",
+    classList: ["header__container"],
+  });
+
+  container.appendChild(
     createElement({
       name: "img",
       classList: ["logo"],
@@ -17,8 +22,12 @@ export const Header = () => {
       },
     })
   );
-  header.appendChild(MainSearch());
-  header.appendChild(createElement({ name: "div", classList: ["icon-cart"] }));
+  container.appendChild(MainSearch());
+  container.appendChild(
+    createElement({ name: "div", classList: ["icon-cart"] })
+  );
+
+  header.appendChild(container);
 
   return header;
 };
