@@ -1,0 +1,119 @@
+.patch {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    "e a f f"
+    "b d d c";
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  :nth-child(1) {
+    grid-area: a;
+  }
+  :nth-child(2) {
+    grid-area: b;
+  }
+  :nth-child(3) {
+    grid-area: c;
+  }
+  :nth-child(4) {
+    grid-area: d;
+  }
+  :nth-child(5) {
+    grid-area: e;
+  }
+  :nth-child(6) {
+    grid-area: f;
+    background-color: @blush-element-color;
+    text-align: center;
+  }
+  &_img {
+    p {
+      padding-top: 15px;
+      font-size: 65px;
+      font-family: @Lobster;
+    }
+  }
+  @media screen and (max-width: 1189px) {
+    p {
+      padding-top: 10px;
+      font-size: 55px;
+    }
+  }
+  @media screen and (max-width: 1085px) {
+    p {
+      padding-top: 10px;
+      font-size: 50px;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    grid-template-areas:
+      "f f f"
+      "e a b"
+      "d d c";
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-row: 0px;
+  }
+  @media screen and (max-width: 980px) {
+    p {
+      padding-top: 15px;
+      font-size: 60px;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    p {
+      padding-top: 10px;
+      font-size: 55px;
+    }
+  }
+  @media screen and (max-width: 811px) {
+    p {
+      padding-top: 0;
+      font-size: 50px;
+    }
+  }
+  @media screen and (max-width: 710px) {
+    grid-template-areas:
+      "f f"
+      "a e"
+      "d d"
+      "b c";
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    p {
+      padding-top: 20px;
+      font-size: 60px;
+    }
+  }
+  @media screen and (max-width: 611px) {
+    p {
+      padding-top: 15px;
+      font-size: 50px;
+    }
+  }
+  @media screen and (max-width: 505px) {
+    p {
+      padding-top: 0;
+      font-size: 45px;
+    }
+  }
+  @media screen and (max-width: 430px) {
+    p {
+      font-size: 40px;
+    }
+  }
+  @media screen and (max-width: 378px) {
+    p {
+      font-size: 35px;
+    }
+  }
+  @media screen and (max-width: 333px) {
+    p {
+      font-size: 30px;
+    }
+  }
+}
