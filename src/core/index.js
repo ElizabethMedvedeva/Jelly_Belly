@@ -4,6 +4,7 @@ import {
 } from "../components/banner/js/banner.js";
 import { createBestSellers } from "../components/ui/best_sellers/best_sellers.js";
 import { getCards } from "../components/cards/cards.js";
+import { createPatch, getPatchesImg } from "../components/ui/patch/patch.js";
 import { Header } from "../components/ui/header/header.js";
 
 async function init() {
@@ -17,6 +18,8 @@ async function init() {
   cards = shuffle(cards);
   cards = cards.slice(0, 6);
   createBestSellers(root, cards);
+  const patches = await getPatchesImg();
+  createPatch(root, patches);
 }
 
 init();
