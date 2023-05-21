@@ -17,23 +17,10 @@
   }
   &-button {
     &-prev {
-      background-color: #bb8b5f30;
       left: 20px;
       &:after {
         color: #111;
-        font-size: 90px;
-        @media screen and (max-width: 900px) {
-          font-size: 40px;
-        }
-        @media screen and (max-width: 900px) {
-          font-size: 25px;
-        }
-      }
-    }
-    &-next {
-      &:after {
-        color: #111;
-        font-size: 90px;
+        font-size: 60px;
         @media screen and (max-width: 900px) {
           font-size: 40px;
         }
@@ -41,7 +28,18 @@
           font-size: 25px;
         }
       }
-      background-color: #bb8b5f30;
+    }
+    &-next {
+      &:after {
+        color: #111;
+        font-size: 60px;
+        @media screen and (max-width: 900px) {
+          font-size: 40px;
+        }
+        @media screen and (max-width: 400px) {
+          font-size: 25px;
+        }
+      }
       right: 20px;
     }
   }
