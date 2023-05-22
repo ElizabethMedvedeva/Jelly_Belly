@@ -22,7 +22,8 @@ function createModal(root) {
     const modal = document.getElementById("myModal");
     modal.style.display = "block";
     modalImage.src = this.src;
-    captionText.innerHTML = "Name of Jelly Belly";
+    const card = this.parentNode.parentNode;
+    captionText.innerHTML = card.querySelector(".card_info_name").innerText;
   }
   
   function closeModal() {
