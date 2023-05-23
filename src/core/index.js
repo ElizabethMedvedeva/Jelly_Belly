@@ -7,11 +7,16 @@ import { getCards } from "../components/cards/cards.js";
 import { createPatch, getPatchesImg } from "../components/ui/patch/patch.js";
 import { Header } from "../components/ui/header/header.js";
 import { Footer } from "../components/ui/footer/footer.js";
+import { createBasket } from "../components/basket/basket.js";
 
 async function init() {
   const root = document.getElementById("root");
 
   root.appendChild(Header());
+
+  let openBtn = document.querySelector(".icon-cart");
+
+  createBasket(root, openBtn);
 
   const swipers = await getSwiperImages();
   createBanner(root, swipers);
