@@ -1,4 +1,3 @@
-
 .card {
   background-color: @alto-element-color;
   &_image {
@@ -43,6 +42,98 @@
       font-weight: 400;
       line-height: 36px;
       border-style: none;
+      cursor: pointer;
+    }
+  }
+  @media screen and (max-width: 1078px) {
+    &_button {
+      &_btn {
+        width: 300px;
+        height: 68px;
+      }
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    &_image {
+      height: 300px;
+    }
+    &_info {
+      height: 100px;
+      &_name {
+        font-size: 20px;
+        line-height: 24px;
+      }
+      &_price {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+    &_button {
+      &_btn {
+        width: 220px;
+        height: 47px;
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+  }
+  @media screen and (max-width: 860px) {
+    &_image {
+      height: 250px;
+    }
+    &_info {
+      height: 120px;
+      &_name {
+        font-size: 30px;
+        line-height: 36px;
+      }
+      &_price {
+        font-size: 30px;
+        line-height: 36px;
+      }
+    }
+    &_button {
+      &_btn {
+        width: 320px;
+        height: 67px;
+        font-size: 30px;
+        line-height: 36px;
+      }
+    }
+  }
+  @media screen and (max-width: 725px) {
+    &_image {
+    }
+    &_info {
+      height: 80px;
+      &_name {
+        font-size: 20px;
+        line-height: 24px;
+      }
+      &_price {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+    &_button {
+      &_btn {
+        width: 300px;
+        height: 57px;
+        font-size: 20px;
+        line-height: 24px;
+        margin: 0 20px;
+      }
+    }
+  }
+  @media screen and (max-width: 380px) {
+    &_button {
+      &_btn {
+        width: 280px;
+        height: 48px;
+        font-size: 20px;
+        line-height: 24px;
+        margin: 0 10px;
+      }
     }
   }
 }
