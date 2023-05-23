@@ -10,7 +10,7 @@ function createBasket(root, openBtn) {
   let field = document.createElement("div");
   let heading = document.createElement("h2");
   let closeBtn = document.createElement("button");
-
+  let commit = 0;
   cart.classList.add("cart");
   field.classList.add("cart-field");
   closeBtn.classList.add("close");
