@@ -23,7 +23,7 @@ function createCard(root, element) {
 }
 function addToBasket(event) {
   let cardsID = getStore(chosenCardsKey);
-  if(!cardsID){
+  if (!cardsID) {
     cardsID = [];
   }
   cardsID.push(event.target.parentNode.parentNode.id);
