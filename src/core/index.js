@@ -16,7 +16,7 @@ async function init() {
 
   let openBtn = document.querySelector(".icon-cart");
 
-  await createBasket(root, openBtn);
+  createBasket(root, openBtn);
 
   const swipers = await getSwiperImages();
   createBanner(root, swipers);

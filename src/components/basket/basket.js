@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", function () {
   let openBtn = document.querySelector(".icon-cart");
 });
 
-async function createBasket(root, openBtn) {
+function createBasket(root, openBtn) {
   openBtn.addEventListener("click", openBasket);
 
   let basket = document.createElement("div");
@@ -15,29 +15,37 @@ async function createBasket(root, openBtn) {
   let heading = document.createElement("h2");
   heading.innerText = `Your Basket`;
   let closeBtn = document.createElement("button");
-
-  const cardsArr = await getSelectedCards();
+  let deleteAll = document.createElement("button");
 
   basket.classList.add("basket");
   field.classList.add("basket-field");
-  wrapper.classList.add("basket-field_wrapper")
+  wrapper.classList.add("basket-field_wrapper");
   closeBtn.classList.add("close");
-  closeBtn.textContent = "Close";
+  deleteAll.classList.add("delete-button");
+  deleteAll.textContent = "Clear basket";
+  closeBtn.innerHTML = "&times";
   closeBtn.addEventListener("click", closeBasket);
-  for (card of cardsArr) {
-    cardRender(wrapper, card);
-  }
 
   basket.appendChild(heading);
   basket.appendChild(field);
   field.appendChild(wrapper);
   basket.appendChild(closeBtn);
+  basket.append(deleteAll);
   root.appendChild(basket);
+}
+
+async function fillCards() {
+  const cardsArr = await getSelectedCards();
+  const wrapper = document.getElementsByClassName("basket-field_wrapper")[0];
+  for (card of cardsArr) {
+    cardRender(wrapper, card);
+  }
 }
 
 function openBasket(event) {
   const basket = document.getElementsByClassName("basket")[0];
   basket.style.display = "block";
+  fillCards();
 }
 
 function closeBasket(event) {
