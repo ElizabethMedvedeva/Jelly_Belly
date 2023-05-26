@@ -1,5 +1,5 @@
 import { getCards } from "../cards/cards";
-import { getStore } from "../../core/store";
+import { getStore, setStore } from "../../core/store";
 import { chosenCardsKey } from "../../core/constants";
 
 window.addEventListener("DOMContentLoaded", function () {
@@ -16,6 +16,7 @@ function createBasket(root, openBtn) {
   heading.innerText = `Your Basket`;
   let closeBtn = document.createElement("button");
   let deleteAll = document.createElement("button");
+  deleteAll.addEventListener("click", clearBasket);
 
   basket.classList.add("basket");
   field.classList.add("basket-field");
@@ -30,7 +31,7 @@ function createBasket(root, openBtn) {
   basket.appendChild(field);
   field.appendChild(wrapper);
   basket.appendChild(closeBtn);
-  basket.append(deleteAll);
+  basket.appendChild(deleteAll);
   root.appendChild(basket);
 }
 
@@ -45,6 +46,10 @@ async function fillCards() {
 function openBasket(event) {
   const basket = document.getElementsByClassName("basket")[0];
   basket.style.display = "block";
+
+  const wrapper = document.querySelector(".basket-field_wrapper");
+  wrapper.innerHTML = ``;
+
   fillCards();
 }
 
@@ -86,6 +91,12 @@ async function getSelectedCards() {
 function getIdLocalStorage() {
   const chosenStore = getStore(chosenCardsKey);
   return chosenStore;
+}
+
+function clearBasket() {
+  setStore(chosenCardsKey, []);
+  const wrapper = document.querySelector(".basket-field_wrapper");
+  wrapper.innerHTML = ``;
 }
 
 export { createBasket };
