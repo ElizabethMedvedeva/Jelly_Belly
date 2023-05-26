@@ -46,10 +46,12 @@ async function fillCards() {
 function openBasket(event) {
   const basket = document.getElementsByClassName("basket")[0];
   basket.style.display = "block";
+  refreshBasket();
+}
 
+function refreshBasket() {
   const wrapper = document.querySelector(".basket-field_wrapper");
   wrapper.innerHTML = ``;
-
   fillCards();
 }
 
@@ -61,6 +63,7 @@ function closeBasket(event) {
 function cardRender(wrapper, element) {
   const card = document.createElement("div");
   card.classList.add("basket-card");
+  card.id = element.id;
   card.innerHTML = `
   <div class="basket-card_img"><img src = "${element.img}"></div>
   <div class="basket-card_info">
@@ -71,6 +74,8 @@ function cardRender(wrapper, element) {
     <button type="button" class="basket-card_btn_remove">Remove</button>
   </div>
   `;
+  const removeButton = card.querySelector(".basket-card_btn_remove");
+  removeButton.addEventListener("click", removeCard);
 
   wrapper.appendChild(card);
 }
@@ -97,6 +102,16 @@ function clearBasket() {
   setStore(chosenCardsKey, []);
   const wrapper = document.querySelector(".basket-field_wrapper");
   wrapper.innerHTML = ``;
+}
+
+function removeCard(event) {
+  const idArrayLocalStorage = getIdLocalStorage();
+  const selectedCardId = event.target.parentNode.parentNode.id;
+  const newBasketArray = idArrayLocalStorage.filter(function (element) {
+    return element !== selectedCardId;
+  });
+  setStore(chosenCardsKey, newBasketArray);
+  refreshBasket();
 }
 
 export { createBasket };
