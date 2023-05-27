@@ -1,58 +1,114 @@
-.close {
-  display: block;
-  margin: 0 auto;
-  border: none;
-  color: black;
-  cursor: pointer;
-}
 .basket {
   display: none;
-  width: 70%;
-  height: 70%;
+  margin: 0 auto;
+  width: 500px;
   position: absolute;
   z-index: 99;
   top: 0;
-  background-color: rgba(231, 130, 130, 0.51);
-}
-h2 {
-  color: @black-text-color;
-  font-size: 35px;
-  text-align: center;
-  margin-top: 30px;
-}
-.basket .basket-field {
-  max-width: 100%;
-  height: auto;
-  background-color: rgba(231, 130, 130, 0.51);
-  justify-content: space-between;
-  margin: 0 auto;
-}
-.close {
-  background: transparent;
-  font-size: 26px;
-  margin-top: 10px;
-}
-.basket-field_wrapper{
-  display: flex;
-  flex-direction: column;
-}
-.basket-card {
-  display: flex;
-
-  
-
-  &_img {
-    img{
-      height: 150px;
-      width: auto;
+  right: 125px;
+  background-color: @blush-element-color-bright;
+  &_head {
+    display: flex;
+    justify-content: space-between;
+    background-color: @alto-element-color;
+    height: 59px;
+    width: 100%;
+    h2{
+      padding: 5px;
+      font-size: 30px;
     }
   }
-  &_info {
-    &_name {
-    }
-    &_price {
+  &_close {
+    background-color: transparent;
+    border-style: none;
+    font-size: 25px;
+    padding-bottom: 20px;
+    cursor: pointer;
+    &:hover{
+      color: @blush-element-color-bright;
     }
   }
-  &_btn {
+  &_delete-button {
+    border-style: none;
+    background-color: transparent;
+    font-size: 25px;
+    cursor: pointer;
+    &:hover{
+      color: @blush-element-color-bright;
+    }
+  }
+  &-field {
+    &_wrapper {
+      display: flex;
+      flex-direction: column;
+      &_total-price{
+        text-align: end;
+        font-size: 25px;
+        padding: 10px;
+      }
+    }
+  }
+  &-card {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+    &_img {
+      height: 100px;
+      img {
+        height: 100%;
+      }
+    }
+    &_info {
+      &_name {
+        margin-top: 10px;
+        width: 150px;
+        font-size: 18px;
+      }
+      &_price {
+        font-size: 16px;
+      }
+    }
+    &_quantity {
+      display: flex;
+      margin-top: 10px;
+      align-items: center;
+      &_minus {
+        border-style: none;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        font-family: @Comme;
+        font-size: 20px;
+        background-color: transparent;
+        cursor: pointer;
+        &:hover{
+          color: @alto-element-color;
+        }
+      }
+      &_plus {
+        border-style: none;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        font-family: @Comme;
+        font-size: 20px;
+        background-color: transparent;
+        cursor: pointer;
+        &:hover{
+          color: @alto-element-color;
+        }
+      }
+      &_number {
+        font-family: @Comme;
+        font-size: 15px;
+      }
+    }
+    &_btn {
+      display: flex;
+      justify-content: end;
+      padding: 10px;
+      align-items: center;
+
+    }
   }
 }

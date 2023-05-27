@@ -9,29 +9,37 @@ window.addEventListener("DOMContentLoaded", function () {
 function createBasket(root, openBtn) {
   openBtn.addEventListener("click", openBasket);
 
-  let basket = document.createElement("div");
-  let field = document.createElement("div");
-  const wrapper = document.createElement("div");
-  let heading = document.createElement("h2");
+  const basket = document.createElement("div");
+  basket.classList.add("basket");
+
+  const basketHead = document.createElement("div");
+  basketHead.classList.add("basket_head");
+  basket.appendChild(basketHead);
+
+  const heading = document.createElement("h2");
   heading.innerText = `Your Basket`;
-  const closeBtn = document.createElement("button");
+  basketHead.appendChild(heading);
+
   const deleteAll = document.createElement("button");
   deleteAll.addEventListener("click", clearBasket);
+  deleteAll.classList.add("basket_delete-button");
+  deleteAll.textContent = "Delete all";
+  basketHead.appendChild(deleteAll);
 
-  basket.classList.add("basket");
-  field.classList.add("basket-field");
-  wrapper.classList.add("basket-field_wrapper");
-  closeBtn.classList.add("close");
-  deleteAll.classList.add("delete-button");
-  deleteAll.textContent = "delete all";
+  const closeBtn = document.createElement("button");
+  closeBtn.classList.add("basket_close");
   closeBtn.innerHTML = `&times;`;
   closeBtn.addEventListener("click", closeBasket);
+  basketHead.appendChild(closeBtn);
 
-  basket.appendChild(heading);
+  const field = document.createElement("div");
+  field.classList.add("basket-field");
   basket.appendChild(field);
-  basket.appendChild(deleteAll);
+
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("basket-field_wrapper");
   field.appendChild(wrapper);
-  field.appendChild(closeBtn);
+
   root.appendChild(basket);
 }
 
@@ -88,13 +96,13 @@ function cardRender(wrapper, element) {
     <div class="basket-card_info_name">${element.name}</div>
     <div class="basket-card_info_price">Price ${totalPrice}$</div>
   </div>
-  <div class="">
+  <div class="basket-card_quantity">
   <button type="button" class="basket-card_quantity_minus">-</button>
-  <div class="basket-card_quantity">${quantity}</div>
+  <div class="basket-card_quantity_number">${quantity}</div>
   <button type="button" class="basket-card_quantity_plus">+</button>
   </div>
   <div class="basket-card_btn">
-    <button type="button" class="basket-card_btn_remove">Remove</button>
+  <span class="icon-trash1">
   </div>
   `;
   const decreaseButton = card.querySelector(".basket-card_quantity_minus");
@@ -103,7 +111,7 @@ function cardRender(wrapper, element) {
   const increaseButton = card.querySelector(".basket-card_quantity_plus");
   increaseButton.addEventListener("click", increaseQuantity);
 
-  const removeButton = card.querySelector(".basket-card_btn_remove");
+  const removeButton = card.querySelector(".icon-trash1");
   removeButton.addEventListener("click", removeCard);
 
   wrapper.appendChild(card);
@@ -125,7 +133,6 @@ async function increaseQuantity(event) {
   setStore(chosenCardsKey, chosenCard);
   await refreshBasket();
 }
-
 
 async function getSelectedCards() {
   const allCards = await getCards();
