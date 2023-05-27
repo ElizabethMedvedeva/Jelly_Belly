@@ -25,11 +25,6 @@ export const SearchResult = (product) => {
         childrens: [
           { name: "h4", text: product.name },
           { name: "h5", text: `${product.price} $` },
-          {
-            name: "div",
-            classList: ["result-product__article"],
-            childrens: [{ name: "h5", text: `article: ${product.id}` }],
-          },
         ],
       },
       {
