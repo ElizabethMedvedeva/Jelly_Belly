@@ -40,6 +40,7 @@ function clearBasket() {
   const wrapper = document.querySelector(".basket-field_wrapper");
   wrapper.innerHTML = ``;
 }
+
 async function fillCards() {
   const cardsArr = await getSelectedCards();
   const wrapper = document.getElementsByClassName("basket-field_wrapper")[0];
@@ -87,16 +88,44 @@ function cardRender(wrapper, element) {
     <div class="basket-card_info_name">${element.name}</div>
     <div class="basket-card_info_price">Price ${totalPrice}$</div>
   </div>
-  <div class="basket-card_counter">${quantity}</div>
+  <div class="">
+  <button type="button" class="basket-card_quantity_minus">-</button>
+  <div class="basket-card_quantity">${quantity}</div>
+  <button type="button" class="basket-card_quantity_plus">+</button>
+  </div>
   <div class="basket-card_btn">
     <button type="button" class="basket-card_btn_remove">Remove</button>
   </div>
   `;
+  const decreaseButton = card.querySelector(".basket-card_quantity_minus");
+  decreaseButton.addEventListener("click", decreaseQuantity);
+
+  const increaseButton = card.querySelector(".basket-card_quantity_plus");
+  increaseButton.addEventListener("click", increaseQuantity);
+
   const removeButton = card.querySelector(".basket-card_btn_remove");
   removeButton.addEventListener("click", removeCard);
 
   wrapper.appendChild(card);
 }
+
+async function decreaseQuantity(event) {
+  const selectedCardID = event.target.parentNode.parentNode.id;
+  const chosenCard = getIdLocalStorage();
+  const index = chosenCard.indexOf(selectedCardID);
+  chosenCard.splice(index, 1);
+  setStore(chosenCardsKey, chosenCard);
+  await refreshBasket();
+}
+
+async function increaseQuantity(event) {
+  const selectedCardID = event.target.parentNode.parentNode.id;
+  const chosenCard = getIdLocalStorage();
+  chosenCard.push(selectedCardID);
+  setStore(chosenCardsKey, chosenCard);
+  await refreshBasket();
+}
+
 
 async function getSelectedCards() {
   const allCards = await getCards();
