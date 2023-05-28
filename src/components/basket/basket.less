@@ -4,18 +4,64 @@
   width: 500px;
   position: absolute;
   z-index: 99;
-  top: 0;
-  right: 125px;
+  top: 70px;
+  left: 50%;
   background-color: @blush-element-color-bright;
+  @media screen and (max-width: 1050px) {
+    left: 45%;
+  }
+  @media screen and (max-width: 930px) {
+    left: 40%;
+  }
+  @media screen and (max-width: 855px) {
+    left: 35%;
+  }
+  @media screen and (max-width: 785px) {
+    left: 30%;
+  }
+  @media screen and (max-width: 730px) {
+    left: 25%;
+  }
+  @media screen and (max-width: 685px) {
+    left: 20%;
+  }
+  @media screen and (max-width: 640px) {
+    left: 15%;
+  }
+  @media screen and (max-width: 606px) {
+    left: 5%;
+  }
+  @media screen and (max-width: 580px) {
+    left: 0%;
+  }
+  @media screen and (max-width: 520px) {
+    width: 450px;
+  }
+  @media screen and (max-width: 460px) {
+    width: 400px;
+  }
+  @media screen and (max-width: 420px) {
+    width: 350px;
+  }
+  @media screen and (max-width: 370px) {
+    width: 300px;
+  }
+
   &_head {
     display: flex;
     justify-content: space-between;
     background-color: @alto-element-color;
     height: 59px;
     width: 100%;
-    h2{
+    h2 {
       padding: 5px;
       font-size: 30px;
+      @media screen and (max-width: 460px) {
+        font-size: 25px;
+      }
+      @media screen and (max-width: 371px) {
+        font-size: 20px;
+      }
     }
   }
   &_close {
@@ -24,7 +70,8 @@
     font-size: 25px;
     padding-bottom: 20px;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
       color: @blush-element-color-bright;
     }
   }
@@ -33,7 +80,13 @@
     background-color: transparent;
     font-size: 25px;
     cursor: pointer;
-    &:hover{
+    @media screen and (max-width: 460px) {
+      font-size: 22px;
+    }
+    @media screen and (max-width: 371px) {
+      font-size: 18px;
+    }
+    &:hover {
       color: @blush-element-color-bright;
     }
   }
@@ -41,10 +94,17 @@
     &_wrapper {
       display: flex;
       flex-direction: column;
-      &_total-price{
+      &_total-price {
         text-align: end;
         font-size: 25px;
         padding: 10px;
+        @media screen and (max-width: 520px) {
+          text-align: center;
+        }
+        @media screen and (max-width: 380px) {
+          text-align: start;
+          padding-left: 15px;
+        }
       }
     }
   }
@@ -81,7 +141,7 @@
         font-size: 20px;
         background-color: transparent;
         cursor: pointer;
-        &:hover{
+        &:hover {
           color: @alto-element-color;
         }
       }
@@ -94,7 +154,7 @@
         font-size: 20px;
         background-color: transparent;
         cursor: pointer;
-        &:hover{
+        &:hover {
           color: @alto-element-color;
         }
       }
@@ -108,7 +168,7 @@
       justify-content: end;
       padding: 10px;
       align-items: center;
-
+      cursor: pointer;
     }
   }
 }
