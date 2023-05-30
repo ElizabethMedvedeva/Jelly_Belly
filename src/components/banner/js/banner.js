@@ -31,7 +31,7 @@ function createBanner(root, swipers) {
   banner.classList.add("swiper");
   const swiperWrapper = document.createElement("div");
   swiperWrapper.classList.add("swiper-wrapper");
-  for (swiper of swipers) {
+  for (let swiper of swipers) {
     const swiperSlide = document.createElement("div");
     swiperSlide.classList.add("swiper-slide");
     const swiperImg = document.createElement("img");
