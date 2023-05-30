@@ -2,9 +2,9 @@ import { getCards } from "../cards/cards";
 import { getStore, setStore } from "../../core/store";
 import { chosenCardsKey } from "../../core/constants";
 
-window.addEventListener("DOMContentLoaded", function () {
-  let openBtn = document.querySelector(".icon-cart");
-});
+// window.addEventListener("DOMContentLoaded", function () {
+//   let openBtn = document.querySelector(".icon-cart");
+// });
 
 function createBasket(root, openBtn) {
   openBtn.addEventListener("click", openBasket);
@@ -52,7 +52,7 @@ function clearBasket() {
 async function fillCards() {
   const cardsArr = await getSelectedCards();
   const wrapper = document.getElementsByClassName("basket-field_wrapper")[0];
-  for (card of cardsArr) {
+  for (let card of cardsArr) {
     cardRender(wrapper, card);
   }
 }
@@ -165,7 +165,7 @@ async function removeCard(event) {
 function getCardsQuantity() {
   const selectedCardID = getIdLocalStorage();
   const counter = {};
-  for (id of selectedCardID) {
+  for (let id of selectedCardID) {
     if (id in counter) {
       counter[id] += 1;
     } else {
@@ -178,7 +178,7 @@ function getCardsQuantity() {
 function getTotalPrice() {
   const basketCardPrice = document.querySelectorAll(".basket-card_info_price");
   let fullPrice = 0;
-  for (card of basketCardPrice) {
+  for (let card of basketCardPrice) {
     let priceText = card.innerText;
     let price = +priceText.substring(6, priceText.length - 1);
     fullPrice += price;

@@ -12,21 +12,23 @@ import { createBasket } from "../components/basket/basket.js";
 async function init() {
   const root = document.getElementById("root");
 
-  root.appendChild(Header());
-
   let openBtn = document.querySelector(".icon-cart");
 
   await createBasket(root, openBtn);
 
+  const swipers = await getSwiperImages();
+  
   let cards = await getCards();
   cards = shuffle(cards);
   cards = cards.slice(0, 6);
-  createBestSellers(root, cards);
   const patches = await getPatchesImg();
+
+  root.appendChild(Header());
+  createBanner(root, swipers);
+  createBestSellers(root, cards);
   createPatch(root, patches);
   root.appendChild(Footer());
-  const swipers = await getSwiperImages();
-  createBanner(root, swipers);
+
 }
 
 init();
