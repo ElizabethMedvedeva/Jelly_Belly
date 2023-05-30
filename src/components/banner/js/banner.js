@@ -1,5 +1,6 @@
 export * from "../../../core/index.js";
 import { apiRequest } from "../../../core/api.js";
+import Swiper from 'swiper';
 
 function createSwiper() {
   new Swiper(".swiper", {
