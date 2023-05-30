@@ -12,6 +12,7 @@ function createCard(root, element) {
   <div class="card_info">
     <div class="card_info_name">${element.name}</div>
     <div class="card_info_price">Price ${element.price}$</div>
+    <div class="card_info_article">article: ${element.id}</div>
   </div>
   <div class="card_button"><button class="card_button_btn" type="button">Add to cart</button></div>
   `;
