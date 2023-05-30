@@ -10,7 +10,7 @@ function createBestSellers(root, cards) {
     `;
   const bestSellersCards = document.createElement("div");
   bestSellersCards.classList.add("best-sellers_cards");
-  for (i = 0; i < cards.length; i++) {
+  for (let i = 0; i < cards.length; i++) {
     createCard(bestSellersCards, cards[i]);
   }
 
