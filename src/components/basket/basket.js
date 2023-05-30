@@ -2,14 +2,8 @@ import { getCards } from "../cards/cards";
 import { getStore, setStore } from "../../core/store";
 import { chosenCardsKey } from "../../core/constants";
 
-window.addEventListener("DOMContentLoaded", function () {
- let openBtn = document.querySelector(".icon-cart");
- openBtn.addEventListener("click", openBasket);
-});
 
-function createBasket(root, openBtn) {
-  // openBtn.addEventListener("click", openBasket);
-
+function createBasket(root) {
   const basket = document.createElement("div");
   basket.classList.add("basket");
 
@@ -187,4 +181,4 @@ function getTotalPrice() {
   return fullPrice;
 }
 
-export { createBasket };
+export { createBasket, openBasket };

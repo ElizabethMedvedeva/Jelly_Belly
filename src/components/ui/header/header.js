@@ -1,5 +1,6 @@
 import { createElement } from "../../../helpers";
 import { MainSearch } from "../../search/search";
+import { openBasket } from "../../basket/basket";
 
 export const Header = () => {
   const header = createElement({
@@ -23,9 +24,9 @@ export const Header = () => {
     })
   );
   container.appendChild(MainSearch());
-  container.appendChild(
-    createElement({ name: "div", classList: ["icon-cart"] })
-  );
+  const basket = createElement({ name: "div", classList: ["icon-cart"] });
+  basket.addEventListener("click", openBasket);
+  container.appendChild(basket);
 
   header.appendChild(container);
 
