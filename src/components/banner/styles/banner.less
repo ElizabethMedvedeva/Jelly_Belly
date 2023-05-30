@@ -1,18 +1,15 @@
 .swiper {
   display: flex;
-  height: 760px;
   margin: 0 auto;
   box-sizing: content-box;
+  height: auto;
 
   &-slide {
     display: flex;
 
     img {
-      margin-left: auto;
-      margin-right: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      margin: 0 auto;
+      width: 100%;
     }
   }
   &-button {
@@ -55,30 +52,5 @@
         background-color: #e78282;
       }
     }
-  }
-}
-
-@media (max-width: 1550px) {
-  .swiper {
-    height: 500px;
-  }
-}
-
-@media (max-width: 990px) {
-  .swiper {
-    height: 350px;
-  }
-}
-
-@media (max-width: 650px) {
-  .swiper {
-    height: 250px;
-  }
-}
-
-@media (max-width: 400px) {
-  .swiper {
-    height: 200px;
-    max-width: 300px;
   }
 }
