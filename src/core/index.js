@@ -18,8 +18,6 @@ async function init() {
 
   await createBasket(root, openBtn);
 
-  const swipers = await getSwiperImages();
-  createBanner(root, swipers);
   let cards = await getCards();
   cards = shuffle(cards);
   cards = cards.slice(0, 6);
@@ -27,6 +25,8 @@ async function init() {
   const patches = await getPatchesImg();
   createPatch(root, patches);
   root.appendChild(Footer());
+  const swipers = await getSwiperImages();
+  createBanner(root, swipers);
 }
 
 init();
