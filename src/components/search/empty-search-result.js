@@ -6,6 +6,6 @@ export const EmptySearchResult = () => {
   return createElement({
     name: "li",
     classList: ["main-search__result-empty"],
-    childrens: [{ name: "h4", text: "Товар не найден" }],
+    childrens: [{ name: "h4", text: "Not found" }],
   });
 };

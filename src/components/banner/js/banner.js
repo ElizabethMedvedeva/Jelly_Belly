@@ -6,23 +6,12 @@ function createSwiper() {
   new Swiper(".swiper", {
     direction: "horizontal",
     loop: true,
-    speed: 500,
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    spaceBetween: 20,
-    effect: "slide",
-    mousewheelControl: 1,
-    speed: 1000,
-    grabCursor: true,
-
-    direction: "horizontal",
-    loop: true,
-    pagination: ".swiper-pagination",
-
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+    autoplay: {
+      delay: 1000,
+      disableOnInteraction: false,
     },
+    spaceBetween: 20,
+    grabCursor: true,
   });
 }
 
