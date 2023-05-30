@@ -1,7 +1,7 @@
 export * from "../../../core/index.js";
 import { apiRequest } from "../../../core/api.js";
-import Swiper from 'swiper';
-
+import Swiper from "swiper";
+import "../styles/swiper-bundle.min.css";
 function createSwiper() {
   new Swiper(".swiper", {
     direction: "horizontal",
@@ -23,11 +23,6 @@ function createSwiper() {
       el: ".swiper-pagination",
       clickable: true,
     },
-
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
   });
 }
 
@@ -47,13 +42,7 @@ function createBanner(root, swipers) {
   }
   const swiperPagination = document.createElement("div");
   swiperPagination.classList.add("swiper-pagination");
-  const swiperPrev = document.createElement("div");
-  swiperPrev.classList.add("swiper-button-prev");
-  const swiperNext = document.createElement("div");
-  swiperNext.classList.add("swiper-button-next");
   banner.appendChild(swiperPagination);
-  banner.appendChild(swiperPrev);
-  banner.appendChild(swiperNext);
   root.appendChild(banner);
   createSwiper();
 }

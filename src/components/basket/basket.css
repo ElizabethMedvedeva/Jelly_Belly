@@ -1,0 +1,103 @@
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.basket {
+  display: none;
+  margin: 0 auto;
+  width: 500px;
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  right: 125px;
+  background-color: #e78282;
+}
+.basket_head {
+  display: flex;
+  justify-content: space-between;
+  background-color: #d9d9d9;
+  height: 59px;
+  width: 100%;
+}
+.basket_head h2 {
+  padding: 5px;
+  font-size: 30px;
+}
+.basket_close {
+  background-color: transparent;
+  border-style: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+.basket_close:hover {
+  color: #e78282;
+}
+.basket_delete-button {
+  border-style: none;
+  background-color: transparent;
+  font-size: 25px;
+  cursor: pointer;
+}
+.basket_delete-button:hover {
+  color: #e78282;
+}
+.basket-field_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.basket-field_wrapper_total-price {
+  text-align: end;
+  font-size: 25px;
+  padding: 10px;
+}
+.basket-card {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+}
+.basket-card_img {
+  height: 100px;
+}
+.basket-card_img img {
+  height: 100%;
+}
+.basket-card_info_name {
+  font-size: 20px;
+}
+.basket-card_info_price {
+  font-size: 16px;
+}
+.basket-card_quantity {
+  display: flex;
+}
+.basket-card_quantity_minus {
+  border-style: none;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  font-family: "Comme", sans-serif;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.basket-card_quantity_minus:hover {
+  color: #d9d9d9;
+}
+.basket-card_quantity_plus {
+  border-style: none;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  font-family: "Comme", sans-serif;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.basket-card_quantity_plus:hover {
+  color: #d9d9d9;
+}
+.basket-card_quantity_number {
+  font-family: "Comme", sans-serif;
+  font-size: 15px;
+}

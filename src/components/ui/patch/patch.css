@@ -1,0 +1,22 @@
+.patch {
+  max-width: 1170px;
+  display: grid;
+}
+.patch :nth-child(1) {
+  grid-area: a;
+}
+.patch :nth-child(2) {
+  grid-area: b;
+}
+.patch :nth-child(3) {
+  grid-area: c;
+}
+.patch :nth-child(4) {
+  grid-area: d;
+}
+.patch :nth-child(5) {
+  grid-area: e;
+}
+.patch :nth-child(6) {
+  grid-area: f;
+}

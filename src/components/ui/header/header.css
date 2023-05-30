@@ -1,0 +1,40 @@
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.header {
+  background-color: rgba(231, 130, 130, 0.51);
+}
+.header__container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+.header .logo {
+  max-width: 80px;
+  max-height: 70px;
+}
+.header .main-search {
+  width: 800px;
+  position: relative;
+  margin: 0 20px;
+}
+.header .icon-cart::before {
+  font-size: 20px;
+  cursor: pointer;
+}
+@media (max-width: 500px) {
+  .header {
+    padding: 5px;
+  }
+  .header .logo {
+    max-width: 45px;
+    max-height: 45px;
+  }
+}
