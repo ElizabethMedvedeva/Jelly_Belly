@@ -4,10 +4,11 @@ import { chosenCardsKey } from "../../core/constants";
 
 window.addEventListener("DOMContentLoaded", function () {
  let openBtn = document.querySelector(".icon-cart");
+ openBtn.addEventListener("click", openBasket);
 });
 
 function createBasket(root, openBtn) {
-  openBtn.addEventListener("click", openBasket);
+  // openBtn.addEventListener("click", openBasket);
 
   const basket = document.createElement("div");
   basket.classList.add("basket");
