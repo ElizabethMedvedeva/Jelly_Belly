@@ -2,9 +2,9 @@ import { getCards } from "../cards/cards";
 import { getStore, setStore } from "../../core/store";
 import { chosenCardsKey } from "../../core/constants";
 
-// window.addEventListener("DOMContentLoaded", function () {
-//   let openBtn = document.querySelector(".icon-cart");
-// });
+window.addEventListener("DOMContentLoaded", function () {
+ let openBtn = document.querySelector(".icon-cart");
+});
 
 function createBasket(root, openBtn) {
   openBtn.addEventListener("click", openBasket);
